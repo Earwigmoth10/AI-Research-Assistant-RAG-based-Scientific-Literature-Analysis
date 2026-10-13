@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-research-assistant-rag"
+version = "0.1.0"
+description = "RAG-based scientific literature analysis: hybrid retrieval, citations, evaluation."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = ["numpy>=1.24", "scikit-learn>=1.3", "pypdf>=4.0", "python-dotenv>=1.0"]
+
+[project.optional-dependencies]
+ui = ["streamlit>=1.35"]
+dense = ["sentence-transformers>=2.7"]
+anthropic = ["anthropic>=0.40"]
+openai = ["openai>=1.40"]
+dev = ["pytest>=7.4", "ruff>=0.5"]
+
+[project.scripts]
+rag-assistant = "rag_assistant.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "tests"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 130
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
