@@ -1,0 +1,9 @@
+Retrieval-Augmented Generation for Knowledge-Intensive Tasks: A Short Overview
+
+Retrieval-augmented generation (RAG) combines a retriever with a generative language model. Given a question, the retriever selects passages from an external corpus, and the generator conditions on those passages to produce an answer. This design keeps the knowledge outside the model parameters, so the corpus can be updated without retraining.
+
+A typical RAG pipeline has four stages. Documents are split into chunks, each chunk is converted to a vector with an embedding model, the vectors are stored in an index, and at query time the nearest chunks are retrieved and placed in the prompt. Chunk size matters because very large chunks dilute relevance while very small chunks lose context.
+
+Hybrid retrieval merges lexical scoring such as BM25 with dense semantic similarity. Lexical methods are strong on exact terms, acronyms and numbers, while dense methods handle paraphrases. Reciprocal rank fusion combines the two rankings without needing to calibrate their score scales.
+
+Grounding is the main benefit of RAG. Because each answer is tied to retrieved passages, the system can cite its sources and users can verify claims. Hallucination is reduced but not eliminated, since the generator can still misread or ignore the retrieved context. Evaluation therefore covers both retrieval quality, measured with hit rate and mean reciprocal rank, and answer faithfulness.

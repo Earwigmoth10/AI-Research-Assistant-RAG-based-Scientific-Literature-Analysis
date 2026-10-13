@@ -1,0 +1,7 @@
+The Transformer Architecture: Key Ideas
+
+The Transformer replaces recurrence with self-attention. Each token attends to every other token in the sequence, and attention weights are computed from query, key and value projections. Because all positions are processed in parallel, training is much faster than with recurrent networks.
+
+Multi-head attention runs several attention functions in parallel so the model can focus on different relationships at once. Since self-attention has no notion of order, positional encodings are added to the token embeddings. Each layer also contains a position-wise feed-forward network, residual connections and layer normalisation.
+
+Pretraining on large unlabeled text followed by fine-tuning became the standard recipe. Encoder-only models such as BERT are used for classification and retrieval, while decoder-only models generate text autoregressively. The quadratic cost of attention with sequence length limits very long inputs, which motivates efficient attention variants and retrieval-based approaches.
