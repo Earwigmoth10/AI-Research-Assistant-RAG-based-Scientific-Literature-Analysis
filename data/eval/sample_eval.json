@@ -1,0 +1,8 @@
+[
+  {"question": "What is hybrid retrieval and how are the rankings combined?", "relevant_sources": ["rag_overview.txt"]},
+  {"question": "Why does chunk size matter in a RAG pipeline?", "relevant_sources": ["rag_overview.txt"]},
+  {"question": "Which features are used as input for stuttering detection?", "relevant_sources": ["cnn_stuttering_detection.txt"]},
+  {"question": "Why are speaker-disjoint splits needed for evaluation?", "relevant_sources": ["cnn_stuttering_detection.txt"]},
+  {"question": "How does multi-head attention work?", "relevant_sources": ["transformer_architecture.txt"]},
+  {"question": "Why are positional encodings added to token embeddings?", "relevant_sources": ["transformer_architecture.txt"]}
+]
