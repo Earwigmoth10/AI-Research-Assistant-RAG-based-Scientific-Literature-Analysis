@@ -1,8 +1,9 @@
 <p align="center">
-  <img src="docs/images/banner.png" alt="AI Research Assistant: RAG-based Scientific Literature Analysis" width="100%">
+  <img width="2400" height="720" alt="banner" src="https://github.com/user-attachments/assets/34d31580-45bc-4a0e-ba63-b5f951f62505" />
+
 </p>
 
-# 🔬 AI Research Assistant: RAG-based Scientific Literature Analysis
+#  AI Research Assistant: RAG-based Scientific Literature Analysis
 
 [![CI](https://github.com/Earwigmoth10/AI-Research-Assistant-RAG-based-Scientific-Literature-Analysis/actions/workflows/ci.yml/badge.svg)](https://github.com/Earwigmoth10/AI-Research-Assistant-RAG-based-Scientific-Literature-Analysis/actions)
 ![Python](https://img.shields.io/badge/python-3.9%2B-blue)
@@ -16,7 +17,7 @@ and a **Streamlit web app**.
 It runs fully **offline out of the box** (no API keys, no model downloads) and upgrades to
 sentence-transformer embeddings and an LLM (Anthropic Claude or OpenAI) when you want higher quality.
 
-## ✨ Features
+##  Features
 
 | Feature | Details |
 |---|---|
@@ -30,15 +31,16 @@ sentence-transformer embeddings and an LLM (Anthropic Claude or OpenAI) when you
 | Persistent index | Saved to disk; re-ingesting the same paper is a no-op |
 | Interfaces | Python API, CLI (`rag-assistant`), Streamlit UI, Docker |
 
-## 🏗️ Architecture
+##  Architecture
 
 <p align="center">
-  <img src="docs/images/architecture.png" alt="System architecture" width="100%">
+  <img width="1900" height="840" alt="architecture" src="https://github.com/user-attachments/assets/6bd39442-0c11-4a12-8dd5-7ca1372e0791" />
+
 </p>
 
 More detail in [docs/architecture.md](docs/architecture.md).
 
-## 🚀 Quickstart
+##  Quickstart
 
 ```bash
 git clone https://github.com/Earwigmoth10/AI-Research-Assistant-RAG-based-Scientific-Literature-Analysis.git
@@ -109,7 +111,7 @@ answer = bot.ask("What evaluation metrics do the papers report?", top_k=5)
 print(answer.format())
 ```
 
-## 📏 Evaluation
+##  Evaluation
 
 Label a few questions with the source file(s) that should answer them
 (see [`data/eval/sample_eval.json`](data/eval/sample_eval.json)), then run:
@@ -125,11 +127,11 @@ Recall@3           : 1.000
 MRR                : 1.000
 ```
 
-> ⚠️ This result is on the tiny bundled sample (3 short documents), so it only proves the pipeline is wired
+>  This result is on the tiny bundled sample (3 short documents), so it only proves the pipeline is wired
 > correctly. Build a labelled set from your own papers to get meaningful numbers, and compare
 > `--mode bm25`, `--mode dense` and `--mode hybrid` on it.
 
-## ⚙️ Configuration
+##  Configuration
 
 All options can be set via environment variables (or a `.env` file):
 
@@ -143,7 +145,7 @@ All options can be set via environment variables (or a `.env` file):
 | `ANTHROPIC_MODEL` | `claude-sonnet-5-5` | Model used by the Anthropic back-end |
 | `OPENAI_MODEL` | `gpt-4o-mini` | Model used by the OpenAI back-end |
 
-## 🗂️ Project structure
+##  Project structure
 
 ```
 ├── app.py                      # Streamlit web UI
@@ -165,7 +167,7 @@ All options can be set via environment variables (or a `.env` file):
 └── .github/workflows/ci.yml
 ```
 
-## 🧪 Development
+##  Development
 
 ```bash
 pip install -e ".[dev,ui]"
@@ -180,12 +182,12 @@ docker build -t research-assistant .
 docker run -p 8501:8501 research-assistant
 ```
 
-## 🧭 Limitations and roadmap
+##  Limitations and roadmap
 
 - The offline `extractive` generator quotes relevant sentences; it does not paraphrase or reason across passages. Use an LLM back-end for synthesis.
 - Scanned PDFs need OCR before ingestion; tables and equations are extracted as plain text.
 - Planned: cross-encoder re-ranking, FAISS for large corpora, answer-faithfulness evaluation, citation-graph exploration.
 
-## 📄 License
+##  License
 
 MIT, see [LICENSE](LICENSE).
