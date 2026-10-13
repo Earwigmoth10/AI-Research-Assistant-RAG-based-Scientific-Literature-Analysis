@@ -1,0 +1,9 @@
+Speaker-Independent Stuttering Detection with Convolutional Neural Networks: A Summary
+
+Stuttering is a speech disorder marked by repetitions, prolongations and blocks. Automatic detection can support speech-language pathologists by quantifying disfluencies in long recordings. A central challenge is speaker independence: a model trained on some speakers must generalise to speakers it has never heard.
+
+The approach converts audio into log-mel spectrograms and MFCC features, which are fed to a convolutional neural network. Convolutional layers learn local time-frequency patterns, such as the repeated onsets seen in sound repetitions. Pooling layers reduce resolution and a dense classifier predicts the disfluency type for each short window.
+
+To measure speaker independence, evaluation uses speaker-disjoint splits so that no speaker appears in both training and test data. Random window-level splits leak speaker identity and report inflated accuracy. Reported metrics include per-class F1 score, because disfluency classes are imbalanced and fluent speech dominates.
+
+Data augmentation such as time stretching, pitch shifting and added noise improves robustness. Class weighting and focal loss help with the imbalance between fluent and disfluent segments.
